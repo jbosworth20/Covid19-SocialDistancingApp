@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:gravity="center_horizontal"
+        android:text="Health Survey"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check each of the following that applies to you"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <CheckBox
+        android:id="@+id/sixtyfive_yes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I am 65 or older" />
+
+    <CheckBox
+        android:id="@+id/cld"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have chronic lung disease" />
+
+    <CheckBox
+        android:id="@+id/asthma"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have moderate to severe asthma" />
+
+    <CheckBox
+        android:id="@+id/compromised"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I am immunocompromised " />
+
+    <CheckBox
+        android:id="@+id/BMI"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have a BMI of 40 or higher" />
+
+    <CheckBox
+        android:id="@+id/ckd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have chronic kidney disease undergoing dialysis" />
+
+    <CheckBox
+        android:id="@+id/ld"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have liver disease" />
+
+    <CheckBox
+        android:id="@+id/heart"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have serious heart condition(s)" />
+
+    <CheckBox
+        android:id="@+id/diabetes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="I have diabetes" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+
+</LinearLayout>
