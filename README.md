@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 COVID-19 Social Distancing Application Code Base Guide
 =====================================================
 
@@ -60,3 +61,6 @@ License
 -------
 
 Please refer to the [LICENSE](https://github.com/googlemaps/android-samples/blob/master/LICENSE) at the root of this repo.
+=======
+# Covid19-SocialDistancingApp
+>>>>>>> 201b27b6f819f59db264b4c6d61e96210ac165b5
