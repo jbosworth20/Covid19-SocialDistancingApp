@@ -1,5 +1,5 @@
 # covidWatch
-<h1> Idea behind the App </h1>
+<h1> Idea Behind the App </h1>
 The idea behind the app was to make it so that people of different risks would be accounted for differently for and we would keep in mind this and how many people are around you and how close they are to you. The novelity of my idea is designed to help keep keep keep vulenerable people safe during Covid19! 
 <h2> Calculating Social Distancing Score </h2> 
 <h3> Health Survey </h3>
