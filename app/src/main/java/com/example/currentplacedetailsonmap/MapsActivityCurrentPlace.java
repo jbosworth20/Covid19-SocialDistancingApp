@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,7 +32,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.model.PlaceLikelihood;
@@ -43,6 +41,7 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 
 import java.util.Arrays;
 import java.util.List;
+
 
 /**
  * An activity that displays a map showing the place at the device's current location.
@@ -81,12 +80,15 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
     private static final String KEY_LOCATION = "location";
 
     // Used for selecting the current place.
+    //Set the below to public
     private static final int M_MAX_ENTRIES = 5;
     private String[] mLikelyPlaceNames;
     private String[] mLikelyPlaceAddresses;
     private List[] mLikelyPlaceAttributions;
     private LatLng[] mLikelyPlaceLatLngs;
 
+    public static String location_name = " "; //Added this for use in score
+    public static String location_address = " "; //Added this for use in score
     ////////////////////////////////////////////////////////////////////////////////
     //////////// Important Values for your localization and bluetooth //////////////
     ////////////////////////////////////////////////////////////////////////////////
@@ -99,7 +101,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
     // New Bluetooth Devices Number
     private int btDevicesCount;
     ////////////////////////////////////////////////////////////////////////////////
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -400,15 +401,17 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                             // Build a list of likely places to show the user.
                             mLikelyPlaceNames[i] = placeLikelihood.getPlace().getName();
                             mLikelyPlaceAddresses[i] = placeLikelihood.getPlace().getAddress();
-                            mLikelyPlaceAttributions[i] = placeLikelihood.getPlace()
-                                    .getAttributions();
+                            mLikelyPlaceAttributions[i] = placeLikelihood.getPlace().getAttributions();
                             mLikelyPlaceLatLngs[i] = placeLikelihood.getPlace().getLatLng();
+                            location_name = mLikelyPlaceNames[0]; //Added this
+                            location_address = mLikelyPlaceAddresses[0];//Added this
 
                             i++;
                             if (i > (count - 1)) {
                                 break;
                             }
                         }
+
 
                         // Show a dialog offering the user the list of likely places, and add a
                         // marker at the selected place.

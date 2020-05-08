@@ -42,7 +42,14 @@ In order to calculate distance I used RSSI which measures signal strength. While
 for converting RSSI to distance, it was strange and I did not know how to do it so I took a testing
 approach. What I did was set up a Short ArrayList to capture the RSSI scores. I then had score print
 out the RSSI's of the devices. I know my bed is approximately 6 feet long so I set up my laptop to 
-be at the head of the bed and then stood on the other side of my bed with my phone, this gave me
+be at the head of the bed and then stood on the other side of my bed with my phone as well as did 
+test with my family at exactly 6 feet distance, this gave me
 roughly a 6 ft RSSI score which is how I calculate is someone is within 6th feet of a user.
-I found that my scores were -65 and -59, while -59 is more precise, I am not 100% confident it is
-the exact 6 ft distance and since I also got -65 I decided to go with -70 for the bound 
+I found that my scores were between -68 and -59, since -68 was the max I decided to make the bound -70
+
+Things Extracted
+-----
+RSSI
+Location Address
+Location Name
+Identifier

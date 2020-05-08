@@ -40,12 +40,13 @@
         <activity
             android:name=".MapsActivityCurrentPlace"
             android:label="@string/title_activity_maps"/>
+
         <activity
             android:name=".HealthSurvey"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
             android:name=".Score"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:configChanges="orientation|keyboardHidden" />
         <activity
             android:name=".Stats"
             android:configChanges="orientation|keyboardHidden"/>

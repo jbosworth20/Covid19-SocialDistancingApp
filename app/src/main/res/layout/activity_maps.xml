@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView for you. Buttons below are also empty for you."
+        android:text='Go back to Welcome or Survey or get your Score! Make sure to press "Nearby Devices before you scan!"'
         app:layout_constraintBottom_toTopOf="@+id/welcome_button"
         app:layout_constraintStart_toStartOf="parent" />
 

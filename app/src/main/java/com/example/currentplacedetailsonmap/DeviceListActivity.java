@@ -2,7 +2,6 @@ package com.example.currentplacedetailsonmap;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -17,12 +16,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.CalendarView; //Added
-import android.content.SharedPreferences;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Set;
-import java.util.ArrayList; //Imported this
 
 /**
  * This Activity appears as a dialog. It lists any paired devices and
@@ -33,9 +30,13 @@ import java.util.ArrayList; //Imported this
 public class DeviceListActivity extends Activity {
     static int number_score = 0; //Added this
     static int distance_score = 0; //Added this
-    int new_date = 0;
-    SharedPreferences stored_date = getSharedPreferences("stored_date",0);
-    SharedPreferences.Editor editor = stored_date.edit();
+    static ArrayList<String> people_seen = new ArrayList<String>();//Added this
+    static Calendar times = null; //Added this
+    static ArrayList<Integer> count = new ArrayList<Integer> (); //Added this
+
+    //int new_date = 0;
+    //SharedPreferences stored_date = getSharedPreferences("stored_date",0);
+    //SharedPreferences.Editor editor = stored_date.edit();
 
 
     static ArrayList<Short> RSSI = new ArrayList<Short>(); //Added this
@@ -62,7 +63,7 @@ public class DeviceListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        editor.putInt("stored_date", -1); //Make sure is okay
+        //editor.putInt("stored_date", -1); //Make sure is okay
         super.onCreate(savedInstanceState);
         // Setup the window
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
@@ -170,8 +171,8 @@ public class DeviceListActivity extends Activity {
     private void returnNewDeviceCount() {
         //new_date = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
         //if(stored_date.getInt("stored_date",-1) != new_date){
-            distance_score = 0;
-            number_score = 0; //So it resets each time we do a discovery (ADDED)
+        distance_score = 0;
+        number_score = 0; //So it resets each time we do a discovery (ADDED)
         //}
         // Cancel discovery because it's costly and we're about to leave
         mBtAdapter.cancelDiscovery();
@@ -189,6 +190,12 @@ public class DeviceListActivity extends Activity {
         intent.putExtra(EXTRA_DEVICE_COUNT, mNewDevicesArrayAdapter.getCount());
         //ADDED EVERYTHING BELOW THIS COMMENT AND ABOVE THE NEXT ONE
         number_score = mNewDevicesArrayAdapter.getCount();
+        for(int i = 0;i< mNewDevicesArrayAdapter.getCount();i++){
+            if(!people_seen.contains(mNewDevicesArrayAdapter.getItem(i))){
+                people_seen.add(mNewDevicesArrayAdapter.getItem(i));
+                times = Calendar.getInstance();
+            }
+        }
         for(int i = 0;i<RSSI.size();i++) {
             if (RSSI.get(i) > -70) { //Phone: -65, -59 (when near 6 distance)
                 distance_score += 3;
@@ -220,7 +227,7 @@ public class DeviceListActivity extends Activity {
             // Create the result Intent and include the MAC address
             Intent intent = new Intent();
             intent.putExtra(EXTRA_DEVICE_ADDRESS, address); // Put anything you want to return here
-            editor.putInt("stored_date",new_date);
+            //editor.putInt("stored_date",new_date);
             // Set result and finish this Activity
             setResult(Activity.RESULT_OK, intent);
             finish();

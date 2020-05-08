@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#000000"
-        android:text="Covid19 Social Distancing"
+        android:text="coronaWatch"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF" />
@@ -36,6 +36,12 @@
         android:layout_height="77dp"
         android:background="#FFFFFF"
         android:text="This app was developed in order to help you to help keep yourself safe during quartine! If you have not already I suggest you take a brief survey for us to assess your risk level " />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='If you want to skip it you can go directly to the scan! From the next screen press "Nearby Devices" and then click on "Score" to see your score and then you can look at your statistics from the scan!' />
 
     <Button
         android:id="@+id/survey_button"
