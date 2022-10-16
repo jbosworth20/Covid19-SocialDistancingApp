@@ -1,12 +1,12 @@
 # covidWatch
 <h1> Idea Behind the App </h1>
-The idea behind the app was to make it so that people of different risks would be accounted for differently for and we would keep in mind this and how many people are around you and how close they are to you. The novelity of my idea is designed to help keep keep keep vulenerable people safe during Covid19! 
+The idea behind the app was to make it so that people of different risks would be accounted for differently for and we would keep in mind this and how many people are around you and how close they are to you. The novelity of my idea is designed to help keep vulenerable people safe during Covid19! 
 <h2> Calculating Social Distancing Score </h2> 
 <h3> Health Survey </h3>
 Before you begin using the app, we humbly request that you fill out a health survey, your data is not stored in the app but rather is used to calculate a health score. 
 The health score will be used to assess risk levels and be factored into your overall social distancing score.
 This survey was done in order for people who are at risk to take more precaution by seeing a social distancing score than other people who are healthier in order to ensure that they see less people since they may be more likely to die from COVID19.
-<h2> Other Metrics used fro Score</h2>
+<h2> Other Metrics Used for Score</h2>
 Scanning for devices is done via Bluetooth and we gather two things from it, distance and number of people you are around. 
 <h3> Distance </h3>
 There is not a straightforward way to calculate distance with Bluetooth, however RSSI measures signal strength, which is what I used to get a rough estimate on if someone is within 6 feet of someone by extracting it from each of the bluetooth devices that were detected. I included this because staying 6 feet away from others is a major guideline for keeping yourself from getting COVID19.
